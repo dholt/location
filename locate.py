@@ -78,30 +78,9 @@ class scraper():
 			print "Error: ", msg
 			exit(1)
 
-<<<<<<< HEAD
 if __name__ == '__main__':
 	from config import *
 	s = scraper(username, password)
-=======
-	def distanceFrom(self, point):
-		lon2 = point['longitude']
-		lat2 = point['latitude']
-		if len(self.location) == 0:
-			self.locate()
-		lat1 = self.location['latitude']
-		lon1 = self.location['longitude']
-		nauticalMilePerLat = 60.00721
-		nauticalMilePerLongitude = 60.10793
-		rad = math.pi / 180.0
-		milesPerNauticalMile = 1.15078
-		yDistance = (lat2 - lat1) * nauticalMilePerLat
-		xDistance = (math.cos(lat1 * rad) + math.cos(lat2 * rad)) * (lon2 - lon1) * (nauticalMilePerLongitude / 2)
-		distance = math.sqrt( yDistance**2 + xDistance**2 )
-		return distance * milesPerNauticalMile
-
-if __name__ == '__main__':
-	s = scraper('username@me.com', 'password')
->>>>>>> e7a592bee74fa3f908592fdce8b253f4d25294fe
 	location = s.locate()
 
 	if 'noLocation' in location and location['noLocation']:
@@ -110,18 +89,3 @@ if __name__ == '__main__':
 
 	print location['date'], location['time']
 	print "loc:", location['latitude'], location['longitude']
-	
-<<<<<<< HEAD
-=======
-	'''
-	work = {'latitude': 48.937663,
-		'longitude': -123.939734}
-	home = {'latitude': 58.030730,
-		'longitude': -130.983230}
-
-	distWork = round(float(s.distanceFrom(work)), 2)
-	distHome = round(float(s.distanceFrom(home)), 2)
-
-	print distWork, distHome
-	'''
->>>>>>> e7a592bee74fa3f908592fdce8b253f4d25294fe
