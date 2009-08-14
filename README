@@ -1,0 +1,15 @@
+This is a python class to scrape the Mobile Me website for your iPhone's location.
+
+See locate.py for example usage.
+
+Reverse Geocoding:
+Use geopy to reverse-geocode your location!
+http://code.google.com/p/geopy/
+
+Example:
+	from geopy import geocoders
+	googleApiKey = 'your google maps api key'
+        g = geocoders.Google(googleApiKey)
+        l = g.reverse((location['latitude'], location['longitude']))[0].split(',')
+        city = "%s, %s" % (l[1].lstrip(' '), l[2].split(' ')[1])
+
